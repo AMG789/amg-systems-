@@ -1,0 +1,562 @@
+
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMG Systems | حلول تقنية متكاملة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+        
+        .logo span {
+            color: #d4af37;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+        
+        .cta-nav {
+            background: #1a1a2e;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .cta-nav:hover {
+            background: #d4af37;
+            color: #1a1a2e;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero h1 span {
+            color: #d4af37;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a1a2e;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-link {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 4rem 0;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #d4af37;
+        }
+        
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-info h3 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: #f0f0f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* Why Us Section */
+        .why-us {
+            padding: 4rem 0;
+            background: #1a1a2e;
+            color: white;
+        }
+        
+        .why-us .section-title {
+            color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature h3 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            min-width: 250px;
+            transition: transform 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f0f1e;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">AMG <span>Systems</span></div>
+                <ul class="nav-links">
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#portfolio">أعمالنا</a></li>
+                    <li><a href="#why-us">لماذا نحن</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+                <a href="https://wa.me/97150XXXXXXXX" class="cta-nav">اطلب عرض سعر</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>حلول تقنية <span>متكاملة</span></h1>
+            <p>نبني لك أنظمة ذكية، متاجر إلكترونية، وحلول برمجية مخصصة بأعلى معايير الجودة</p>
+            <a href="#contact" class="cta-button">ابدأ مشروعك الآن</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <p class="section-subtitle">نقدم حلول تقنية متكاملة لتطوير أعمالك</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔥</div>
+                    <h3>تطوير Firebase</h3>
+                    <p>أنظمة Realtime Database, Authentication, Cloud Functions بأعلى أداء وأمان</p>
+                    <a href="#contact" class="service-link">اطلب الخدمة →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🚪</div>
+                    <h3>أنظمة البوابات</h3>
+                    <p>Gate Pass Systems متكاملة مع QR Code، التحكم في الدخول/الخروج، والتقارير</p>
+                    <a href="#contact" class="service-link">اطلب الخدمة →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>المتاجر الإلكترونية</h3>
+                    <p>متاجر احترافية مع دفع إلكتروني، إدارة مخزون، ولوحة تحكم كاملة</p>
+                    <a href="#contact" class="service-link">اطلب الخدمة →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>تطوير المواقع</h3>
+                    <p>مواقع تعريفية، أنظمة إدارية، وتطبيقات ويب بأحدث التقنيات</p>
+                    <a href="#contact" class="service-link">اطلب الخدمة →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>بوتات Telegram</h3>
+                    <p>أتمتة الأعمال، إدارة الطلبات، وتكامل مع Firebase وقواعد البيانات</p>
+                    <a href="#contact" class="service-link">اطلب الخدمة →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>تطبيقات الموبايل</h3>
+                    <p>تطبيقات Android/iOS باستخدام React Native و Flutter</p>
+                    <a href="#contact" class="service-link">اطلب الخدمة →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">معرض أعمالنا</h2>
+            <p class="section-subtitle">نماذج من مشاريعنا الناجحة</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🛒</div>
+                    <div class="portfolio-info">
+                        <h3>متجر AMG Perfume</h3>
+                        <p>متجر إلكتروني فاخر لبيع العطور مع نظام سلة تسوق ودفع إلكتروني</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Vercel</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🚪</div>
+                    <div class="portfolio-info">
+                        <h3>Gate Management System</h3>
+                        <p>نظام إدارة بوابات متكامل مع QR Code وتتبع الدخول/الخروج</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Firebase</span>
+                            <span class="tag">QR Code</span>
+                            <span class="tag">Realtime DB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🤖</div>
+                    <div class="portfolio-info">
+                        <h3>Telegram Bot</h3>
+                        <p>بوت إدارة طلبات مخصص مع تكامل Firebase وإشعارات فورية</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Telegram API</span>
+                            <span class="tag">Railway</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار AMG Systems؟</h2>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>سرعة التنفيذ</h3>
+                    <p>نلتزم بالمواعيد ونسلم مشاريعك في الوقت المحدد</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>أمان عالي</h3>
+                    <p>نستخدم أحدث تقنيات الحماية ل securing بياناتك</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>دعم فني</h3>
+                    <p>دعم مستمر بعد التسليم وصيانة دورية</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💎</div>
+                    <h3>جودة ممتازة</h3>
+                    <p>كود نظيف، تصميم احترافي، وأداء عالي</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <p class="section-subtitle">جاهزون لتحويل فكرتك إلى واقع</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>واتساب</h3>
+                    <p>رد سريع على استفساراتك</p>
+                    <a href="https://wa.me/971504426398">تواصل الآن</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>للاستفسارات التفصيلية</p>
+                    <a href="mailto:contact@amgsystems.me">contact@amgsystems.me</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🌐</div>
+                    <h3>المتجر</h3>
+                    <p>زور متجرنا الإلكتروني</p>
+                    <a href="https://amg-perfume.vercel.app">store.amgsystems.me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 AMG Systems. جميع الحقوق محفوظة.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">حلول تقنية متكاملة | الإمارات العربية المتحدة</p>
+        </div>
+    </footer>
+</body>
+</html>
